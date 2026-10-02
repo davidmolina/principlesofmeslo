@@ -1,0 +1,19 @@
+---
+title: How to Change Date Time in Jekyll (Part 2)
+slug: how-to-change-date-time-in-jekyll-02
+source_url: _posts/2023-05-03-how-to-change-date-time-in-jekyll.md
+source_title: How to Change Date Time in Jekyll
+published_at: '2023-05-03 11:12:43 -0800'
+topic: jekyll update
+tags:
+  - imported
+  - blog
+  - knowledge
+  - jekyll update
+chunk_heading: null
+chunk_words: 140
+chunk_index: 2
+chunk_total: 3
+content_type: blog-import
+---
+as I hadn't pushed much to GitHub in several years. When discussing this w/ the developer [Moncef Belyamani](https://www.moncefbelyamani.com/) he suggested to give it a try and if by updating the machine we could launch a new Jekyll site do it. At least to get Ruby updated. The entire process was just a few commands and when it was all said and done I launched a new Jekyll site, re-created all the old blog posts, and re-deployed it. While I was happy with the results the old commits (previous work was gone) and the date was still broken. Not content, I re-deployed the old code and while all my commits were back, the date for my grandfather's obituary was still indicating May 2nd. To fix this, change UTC in our Jekyll blog post from: ```javascript date: 2023-05-03 17:12:43 -0800 ``` to:

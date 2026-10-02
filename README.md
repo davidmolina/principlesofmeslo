@@ -1,103 +1,93 @@
-# Jekyll Serif Theme
+# Principles of MESLO (Next.js)
 
-Serif is a modern business theme for Jekyll. It contains multiple content types for a typical brochure/marketing website. The theme is fully responsive, blazing fast and artfully illustrated.
+Next.js 16 app for The Principles of MESLO.
 
-[Live Demo](https://jekyll-serif.netlify.app/) |
-[Zerostatic Themes](https://www.zerostatic.io)
+## Stack
 
-<a href="https://www.buymeacoffee.com/zerostatic" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
+- Next.js 16 (App Router)
+- React 19
+- TypeScript
+- Tailwind CSS 4
+- pnpm
 
-![Jekyll Serif Theme screenshot](https://www.zerostatic.io/theme/jekyll-serif/jekyll-serif-screenshot.png)
+## Local Development
 
-### Theme features
-
-- Jekyll 4.2+
-- Netlify & Github Pages ready
-- Services (Collection)
-- Team (Collection)
-- Features (Data)
-- SCSS
-- 100% Responsive design, animated hamburger and mobile slide in menu
-- Bootstrap 4.6 - _Only the bootstrap grid and utilites are imported by default. If you want to use more of the Boostrap library you can uncomment the `@import` in `style.scss`_
-- 100/100 Google Lighthouse speed score
-- 100/100 Google Lighthouse seo score
-- 100/100 Google Lighthouse accessibility score
-- 100/100 Google Lighthouse best practices score
-- Under 50KB without images or 80KB with images and illustrations ⚡
-- Under 20KB without Google fonts ⚡⚡⚡
-- Robust example content included
-- Royalty free illustrations included
-
-## Installation
-
-### Installing Ruby & Jekyll
-
-If this is your first time using Jekyll, please follow the [Jekyll docs](https://jekyllrb.com/docs/installation/) and make sure your local environment (including Ruby) is setup correctly.
-
-### Installing Theme
-
-Download or clone the theme.
-
-To run the theme locally, navigate to the theme directory and run:
-
-```
-bundle install
+```bash
+pnpm install
+pnpm dev
 ```
 
-To start the Jekyll local development server.
+Open `http://localhost:3000`.
 
-```
-bundle exec jekyll serve
-```
+## Production Build
 
-To build the theme.
-
-```
-bundle exec jekyll build
+```bash
+pnpm build
+pnpm start
 ```
 
-## Deployment
+## Content and Assets
 
-### Netlify
+Markdown content lives in:
 
-Use Netlify to deploy this theme. This theme contains a valid and tested `netlify.toml` - Feel free to use the 1-click deploy below.
+- `content/pages`
+- `content/services`
+- `content/team`
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/zerostaticthemes/jekyll-serif-theme)
+Static assets are served from:
 
-### Github Pages
+- `public/`
+- `public/images/`
 
-This theme has been tested to work with Github Pages (and Github Project Pages). When using Github Pages you will need to update the `baseurl` in the `_config.yml` otherwise all the css, images and paths will be broken.
+## Netlify Deployment
 
-For example the site https://zerostaticthemes.github.io/jekyll-serif-theme would have `baseurl: "/jekyll-serif-theme/"`
+This repo is configured for Netlify + Next.js via [`netlify.toml`](./netlify.toml).
 
-## Extras
+### Build Settings
 
-### License
+- Build command: `pnpm build`
+- Publish directory: auto-managed by `@netlify/plugin-nextjs` (do not set manually)
+- Node version: `20`
 
-- You cannot create ports of this theme
-- You cannot re-sell this theme
+### Deterministic Deploy Workflow (No GitHub Required)
 
-### Credits
+Deploy target mapping:
+- Test (draft): `https://incandescent-marshmallow-ed1d61.netlify.app/`
+- Live (production): `https://principlesofmeslo.com`
 
-- Beautiful royalty free Illustrations by Icons8 - https://icons8.com/illustrations/style--pixeltrue
-- Stock images by Unsplash - https://unsplash.com/
-- Feature icons by Noun Project - https://thenounproject.com/
+1. Draft/test deploy:
 
-## Support My Work
+```bash
+pnpm run deploy:test
+```
 
-I've been building open source themes for all the main static site generators for over 4 years now. My premium themes allow me to continue to allocate time to maintain, improve and build new open source themes.
+2. Production deploy to live domain:
 
-1. Leave a star ⭐🙏🏻
-2. Make a contribution to this theme, add a feature, fix a bug, nothing is to small 
-2. Mention this theme on twitter [@zerostaticio](https://twitter.com/zerostaticio) 📢
-3. Purchase a premium theme 🔥
+```bash
+pnpm run deploy:prod
+```
 
-### All Jekyll Themes by Zerostatic
+Equivalent raw CLI commands:
 
-- [Jekyll Serif (Open Source)](https://www.zerostatic.io/theme/jekyll-serif/)
-- [Jekyll Atlantic (Open Source)](https://www.zerostatic.io/theme/jekyll-atlantic/)
-- [Jekyll Advance (Premium)](https://www.zerostatic.io/theme/jekyll-advance/)
-- [Jekyll Origin (Premium)](https://www.zerostatic.io/theme/jekyll-origin/)
-- [Jekyll Curate (Premium)](https://www.zerostatic.io/theme/jekyll-curate/)
+```bash
+pnpm exec netlify deploy --build --site a8f5c70a-e58b-42d7-9b73-b4cf2bdac105
+pnpm exec netlify deploy --build --prod --site a8f5c70a-e58b-42d7-9b73-b4cf2bdac105
+```
 
-🇦🇺 **Made in Australia** by Robert Austin
+### One-Time Setup
+
+```bash
+pnpm install
+pnpm exec netlify login
+```
+
+### Recommended Environment Variables
+
+Set these in Netlify Site Settings -> Environment Variables:
+
+- `NEXT_PUBLIC_SITE_URL=https://principlesofmeslo.com` (required for correct absolute metadata URLs)
+
+### Notes
+
+- Do not set a static publish folder for this Next.js app; the Netlify Next runtime handles output.
+- If build caching causes stale output, clear cache and redeploy from Netlify.

@@ -1,0 +1,25 @@
+<svg width="900" height="1400" viewBox="0 0 900 1400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="cover" x1="220" y1="120" x2="780" y2="1300" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#3E5C70"/>
+      <stop offset="1" stop-color="#2E485A"/>
+    </linearGradient>
+    <linearGradient id="spine" x1="90" y1="80" x2="220" y2="1350" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#102A3A"/>
+      <stop offset="1" stop-color="#0A1E2A"/>
+    </linearGradient>
+  </defs>
+  <g transform="rotate(-11 450 700)">
+    <rect x="80" y="60" width="160" height="1280" rx="28" fill="url(#spine)"/>
+    <rect x="220" y="80" width="620" height="1240" rx="24" fill="url(#cover)"/>
+    <rect x="220" y="122" width="620" height="5" fill="#B7D63D"/>
+    <rect x="220" y="1276" width="620" height="5" fill="#B7D63D"/>
+    <text x="530" y="250" text-anchor="middle" fill="#64C4FF" font-size="52" font-family="Arial">Product Pricing Strategy</text>
+    <text x="530" y="425" text-anchor="middle" fill="#E9F0F5" font-size="92" font-weight="700" font-family="Arial">THE</text>
+    <text x="530" y="565" text-anchor="middle" fill="#F6FAFD" font-size="114" font-weight="700" font-family="Arial">PRINCIPLES</text>
+    <text x="530" y="710" text-anchor="middle" fill="#F6FAFD" font-size="114" font-weight="700" font-family="Arial">OF MESLO</text>
+    <text x="530" y="930" text-anchor="middle" fill="#B7D63D" font-size="66" font-family="Arial">The Art &amp; Science of an Estimate</text>
+    <text x="530" y="1160" text-anchor="middle" fill="#64C4FF" font-size="86" font-weight="700" font-family="Arial">DAVID MOLINA</text>
+    <text x="160" y="720" transform="rotate(90 160 720)" text-anchor="middle" fill="#E9F0F5" font-size="74" font-weight="700" font-family="Arial">THE PRINCIPLES OF MESLO</text>
+  </g>
+</svg>

@@ -1,0 +1,19 @@
+---
+title: How to Change Date Time in Jekyll (Part 1)
+slug: how-to-change-date-time-in-jekyll-01
+source_url: _posts/2023-05-03-how-to-change-date-time-in-jekyll.md
+source_title: How to Change Date Time in Jekyll
+published_at: '2023-05-03 11:12:43 -0800'
+topic: jekyll update
+tags:
+  - imported
+  - blog
+  - knowledge
+  - jekyll update
+chunk_heading: null
+chunk_words: 140
+chunk_index: 1
+chunk_total: 3
+content_type: blog-import
+---
+A few days ago I posted about my [grandfather's passing](https://davidcmolina.com/2023/05/01/eusebio-lopez-chevio-flores-dies-at-90/) and shared it. Unfortunately the link, ```javascript https://davidcmolina.com/2023/05/01/eusebio-lopez-chevio-flores-dies-at-90/ ``` broke as soon as May 2nd rolled around. Why? The URL date automatically reverted to May 2nd instead of the original May 1st date that was used in the URL and shared across multiple channels. My initial hunch was to update: ```javascript - _config.yml - Gemfile - Ruby ``` When neither of these worked, I also broke the running server with outdated and deprecated files. I found [Ruby on Mac](https://www.rubyonmac.dev/) which at this point was worth investing to at least to get my machine in order as I hadn't pushed much to GitHub in several years. When discussing this w/ the developer [Moncef Belyamani](https://www.moncefbelyamani.com/) he suggested to give it a try and if by updating the machine we could launch a

@@ -1,0 +1,44 @@
+{
+  "name": "principles-of-meslo",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "import:blog": "tsx scripts/import-blog-to-mdx.ts",
+    "import:blog:repo": "tsx scripts/import-blog-to-mdx.ts --source-mode repo --repo-path ../davidcmolina.com",
+    "embed:imported": "tsx scripts/embed-imported-content.ts",
+    "deploy:test": "netlify deploy --build --site a8f5c70a-e58b-42d7-9b73-b4cf2bdac105",
+    "deploy:prod": "netlify deploy --build --prod --site a8f5c70a-e58b-42d7-9b73-b4cf2bdac105"
+  },
+  "dependencies": {
+    "@ai-sdk/openai": "^3.0.41",
+    "@ai-sdk/react": "^3.0.118",
+    "ai": "^6.0.116",
+    "next": "16.1.6",
+    "next-mdx-remote": "^6.0.0",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "remark-gfm": "^4.0.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@types/turndown": "^5.0.6",
+    "cheerio": "^1.2.0",
+    "eslint": "^9",
+    "eslint-config-next": "16.1.6",
+    "gray-matter": "^4.0.3",
+    "netlify-cli": "^23.2.0",
+    "rss-parser": "^3.13.0",
+    "slugify": "^1.6.6",
+    "tailwindcss": "^4",
+    "tsx": "^4.21.0",
+    "turndown": "^7.2.2",
+    "typescript": "^5"
+  }
+}
