@@ -9,6 +9,8 @@ export default function LandingHeader() {
   const kindleUrl =
     'https://www.amazon.com/Principles-MESLO-Science-Estimate-Book-ebook/dp/B0HLMW7HLX/ref=tmm_kin_swatch_0';
   const launchNavItems = [
+    { href: '/library', label: 'Library' },
+    { href: '/institutions', label: 'Institutions' },
     { href: amazonUrl, label: 'Paperback' },
     { href: kindleUrl, label: 'Kindle eBook' },
   ];
@@ -51,17 +53,23 @@ export default function LandingHeader() {
         </Link>
 
         <nav className="hidden items-center gap-7 text-sm text-neutral-300 md:flex">
-          {launchNavItems.map((item) => (
-            <a
-              key={item.label}
-              href={item.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="transition hover:text-white"
-            >
-              {item.label}
-            </a>
-          ))}
+          {launchNavItems.map((item) =>
+            item.href.startsWith('/') ? (
+              <Link key={item.label} href={item.href} className="transition hover:text-white">
+                {item.label}
+              </Link>
+            ) : (
+              <a
+                key={item.label}
+                href={item.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition hover:text-white"
+              >
+                {item.label}
+              </a>
+            ),
+          )}
         </nav>
 
         <HeaderRightControls

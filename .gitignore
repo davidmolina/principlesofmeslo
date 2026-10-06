@@ -2,6 +2,16 @@
 node_modules
 npm-debug.log
 
+# Environment and local secrets
+.env
+.env.local
+.env*.local
+
+# Next.js / Netlify build output
+.next/
+.netlify/
+tsconfig.tsbuildinfo
+
 # Jekyll
 _site
 _site/

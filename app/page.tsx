@@ -54,6 +54,21 @@ export default function MesloHomepagePrototype() {
                 can operate beyond the owner.
               </p>
 
+              <dl className="mt-5 grid max-w-xl gap-3 text-sm sm:grid-cols-2">
+                <div className="rounded-lg border border-white/10 bg-white/[0.04] px-4 py-3">
+                  <dt className="text-xs font-semibold uppercase tracking-[0.18em] text-[#8eb8d5]">
+                    Publisher
+                  </dt>
+                  <dd className="mt-1 font-semibold text-white">Luminare Press</dd>
+                </div>
+                <div className="rounded-lg border border-white/10 bg-white/[0.04] px-4 py-3">
+                  <dt className="text-xs font-semibold uppercase tracking-[0.18em] text-[#8eb8d5]">
+                    ISBN
+                  </dt>
+                  <dd className="mt-1 font-semibold text-white">979-8-90071-170-6</dd>
+                </div>
+              </dl>
+
               <div className="mt-8 grid max-w-3xl gap-4 sm:grid-cols-2">
                 {purchaseCards.map((card) => (
                   <a
@@ -102,6 +117,23 @@ export default function MesloHomepagePrototype() {
                     </div>
                   </a>
                 ))}
+              </div>
+
+              <div className="mt-5 flex flex-wrap items-center gap-3 text-sm">
+                <a
+                  href="/library"
+                  className="inline-flex items-center gap-2 rounded-xl border border-[#64c4ff]/45 bg-[#64c4ff]/10 px-4 py-2 font-semibold text-[#dff3ff] transition hover:border-[#64c4ff]/70 hover:bg-[#64c4ff]/15"
+                >
+                  Bring MESLO to your library
+                  <span aria-hidden="true">&rarr;</span>
+                </a>
+                <a
+                  href="/institutions"
+                  className="inline-flex items-center gap-2 px-1 py-2 font-semibold text-[#c6d4dd] transition hover:text-white"
+                >
+                  Institutional adoption
+                  <span aria-hidden="true">&rarr;</span>
+                </a>
               </div>
 
             </div>

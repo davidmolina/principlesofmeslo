@@ -11,6 +11,8 @@ export default function GlobalHeader() {
   const kindleUrl =
     'https://www.amazon.com/Principles-MESLO-Science-Estimate-Book-ebook/dp/B0HLMW7HLX/ref=tmm_kin_swatch_0';
   const launchNavItems = [
+    { href: '/library', label: 'Library' },
+    { href: '/institutions', label: 'Institutions' },
     { href: amazonUrl, label: 'Paperback' },
     { href: kindleUrl, label: 'Kindle eBook' },
   ];
