@@ -14,7 +14,7 @@ The MESLO framework organizes estimating and pricing around:
 - **E** — Equipment
 - **S** — Subcontractors
 - **L** — Labor
-- **O** — Other costs
+- **O** — Other Costs
 
 The complete estimating methodology also accounts for insurance and bonding, overhead, profit, and taxes.
 
@@ -37,9 +37,15 @@ This repository powers the public MESLO platform, including:
 
 Built with Next.js 16, React 19, TypeScript, and Tailwind CSS 4.
 
-## Rights and Content
+GitHub is the source repository and version history for this project.
 
-Website source code may be open; *The Principles of MESLO*, MESLO content, book excerpts, graphics, trademarks/branding, educational materials, and other proprietary content remain © David Molina / applicable rights holder, all rights reserved.
+## License and Content Rights
+
+The software source code in this repository is licensed under the terms of the repository's `LICENSE` file.
+
+**The Principles of MESLO**, the MESLO framework and methodology, book content and excerpts, educational materials, worksheets, graphics, logos, trademarks, branding, and other proprietary content are not licensed under the software license unless expressly stated otherwise.
+
+© 2026 David Molina. All rights reserved.
 
 ---
 
@@ -82,29 +88,22 @@ This repo is configured for Netlify + Next.js via [`netlify.toml`](./netlify.tom
 - Publish directory: auto-managed by `@netlify/plugin-nextjs` (do not set manually)
 - Node version: `20`
 
-### Deterministic Deploy Workflow (No GitHub Required)
+### Manual Netlify Deployment
 
-Deploy target mapping:
-- Test (draft): `https://incandescent-marshmallow-ed1d61.netlify.app/`
-- Live (production): `https://principlesofmeslo.com`
+Production deploys publish to:
 
-1. Draft/test deploy:
+- Live site: `https://principlesofmeslo.com`
 
-```bash
-pnpm run deploy:test
-```
-
-2. Production deploy to live domain:
+Run a production deploy:
 
 ```bash
 pnpm run deploy:prod
 ```
 
-Equivalent raw CLI commands:
+Optional draft deploys can be created through Netlify when needed:
 
 ```bash
-pnpm exec netlify deploy --build --site a8f5c70a-e58b-42d7-9b73-b4cf2bdac105
-pnpm exec netlify deploy --build --prod --site a8f5c70a-e58b-42d7-9b73-b4cf2bdac105
+pnpm run deploy:test
 ```
 
 ### One-Time Setup
