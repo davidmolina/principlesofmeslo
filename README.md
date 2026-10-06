@@ -37,6 +37,10 @@ This repository powers the public MESLO platform, including:
 
 Built with Next.js 16, React 19, TypeScript, and Tailwind CSS 4.
 
+## Rights and Content
+
+Website source code may be open; *The Principles of MESLO*, MESLO content, book excerpts, graphics, trademarks/branding, educational materials, and other proprietary content remain © David Molina / applicable rights holder, all rights reserved.
+
 ---
 
 ## Local Development
