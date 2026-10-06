@@ -1,14 +1,43 @@
-# Principles of MESLO (Next.js)
+# The Principles of MESLO
 
-Next.js 16 app for The Principles of MESLO.
+Official repository for [principlesofmeslo.com](https://principlesofmeslo.com), the digital home of **The Principles of MESLO** by David Molina.
 
-## Stack
+MESLO is an estimating and operational framework built around a simple principle: **Know your number.**
 
-- Next.js 16 (App Router)
-- React 19
-- TypeScript
-- Tailwind CSS 4
-- pnpm
+The framework helps contractors, estimators, entrepreneurs, and organizations understand the complete economics of a job, service, or project, from direct costs through overhead, profit, and taxes.
+
+## About MESLO
+
+The MESLO framework organizes estimating and pricing around:
+
+- **M** — Materials
+- **E** — Equipment
+- **S** — Subcontractors
+- **L** — Labor
+- **O** — Other costs
+
+The complete estimating methodology also accounts for insurance and bonding, overhead, profit, and taxes.
+
+This repository powers the public MESLO platform, including:
+
+- Book and educational resources
+- Library distribution
+- Institutional adoption
+- MESLO tools and resources
+- Future educational and digital products
+
+## Links
+
+- Website: https://principlesofmeslo.com
+- Library requests: https://principlesofmeslo.com/library
+- Institutional adoption: https://principlesofmeslo.com/institutions
+- Author: https://davidcmolina.com
+
+## Technology
+
+Built with Next.js 16, React 19, TypeScript, and Tailwind CSS 4.
+
+---
 
 ## Local Development
 
