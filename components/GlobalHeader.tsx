@@ -7,15 +7,25 @@ import HeaderRightControls from '@/components/HeaderRightControls';
 export default function GlobalHeader() {
   const pathname = usePathname();
   const instagramUrl = 'https://www.instagram.com/principlesofmeslo';
-  const amazonUrl = 'https://www.amazon.com/dp/B0HLMLCSYQ';
+  const amazonUrl =
+    'https://www.amazon.com/Principles-MESLO-Art-Science-Estimate/dp/B0HLMLCSYQ/ref=sr_1_1?crid=2Z7UYG16I6TQK&dib=eyJ2IjoiMSJ9.gMHYh-gaUhHUVzDcWoQVhbTPlgMlTv--jvMckL8H1gcJW0kxhVozCP37_9eWbcnzuGPBF7qGvPbAxHIZLiT_nLESbJ4KIyoQaHTiwpb35Fsx0iGjeyZp6yQRPl23Q1gc---1nDSQma5Ejda6ay3nsLOCmTT0UO-4N9gmgoriEcrXZ0N633YzCFB6iB6fEKtjDllg27yt7zy9GPiH5hNDMziGSFymRZweiOT8F7D_M8o.loU3xR8mvN982uz1v4dRUG3A6naD2Vp94HpZIQYW5EQ&dib_tag=se&keywords=The+Principles+of+MESLO&qid=1791176104&sprefix=the+principles+of+meslo%2Caps%2C199&sr=8-1';
+  const barnesNobleHardcoverUrl =
+    'https://www.barnesandnoble.com/w/the-principles-of-meslo-david-molina/1151585871?ean=9798900711706';
   const kindleUrl =
     'https://www.amazon.com/Principles-MESLO-Science-Estimate-Book-ebook/dp/B0HLMW7HLX/ref=tmm_kin_swatch_0';
-  const launchNavItems = [
-    { href: '/library', label: 'Library' },
-    { href: '/institutions', label: 'Institutions' },
-    { href: amazonUrl, label: 'Paperback' },
-    { href: kindleUrl, label: 'Kindle eBook' },
-  ];
+  const launchNavItems =
+    pathname === '/what-is-meslo'
+      ? [
+          { href: '/what-is-meslo', label: 'What is MESLO' },
+          { href: '/#preface-heading', label: 'Free Audio Preview' },
+        ]
+      : [
+          { href: '/library', label: 'Library' },
+          { href: '/institutions', label: 'Institutions' },
+          { href: barnesNobleHardcoverUrl, label: 'Hardcover' },
+          { href: amazonUrl, label: 'Paperback' },
+          { href: kindleUrl, label: 'Kindle eBook' },
+        ];
 
   if (pathname === '/') {
     return null;
@@ -52,17 +62,23 @@ export default function GlobalHeader() {
 
         <div className="flex items-center gap-4">
           <nav className="hidden items-center gap-6 text-sm text-[#d2dce4] md:flex">
-            {launchNavItems.map((item) => (
-              <a
-                key={item.label}
-                href={item.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="transition hover:text-white"
-              >
-                {item.label}
-              </a>
-            ))}
+            {launchNavItems.map((item) =>
+              item.href.startsWith('/') ? (
+                <Link key={item.label} href={item.href} className="transition hover:text-white">
+                  {item.label}
+                </Link>
+              ) : (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="transition hover:text-white"
+                >
+                  {item.label}
+                </a>
+              ),
+            )}
           </nav>
           <HeaderRightControls
             instagramUrl={instagramUrl}

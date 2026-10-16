@@ -95,24 +95,6 @@ export default function InstitutionsPage() {
         </div>
       </section>
 
-      <section className="bg-[#0f2432]">
-        <div className="mx-auto max-w-7xl px-6 py-12 lg:px-8">
-          <div className="grid gap-5 md:grid-cols-3">
-            <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#8eb8d5]">
-                Path
-              </p>
-              <h2 className="mt-3 text-2xl font-semibold text-white">Program adoption</h2>
-            </div>
-            <p className="text-base leading-7 text-[#c6d4dd] md:col-span-2">
-              Use this page when the conversation is larger than one patron request: curriculum,
-              training delivery, organizational deployment, program partnerships, or technical
-              assistance. Individual library purchase requests should go through the public library
-              page, where readers can share public proof with #principlesofmeslo.
-            </p>
-          </div>
-        </div>
-      </section>
     </main>
   );
 }

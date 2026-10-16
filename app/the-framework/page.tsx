@@ -1,7 +1,9 @@
+import Link from 'next/link';
+
 const meslo = [
   {
     letter: 'M',
-    title: 'Material',
+    title: 'Materials',
     desc: 'Quantify scope clearly, reduce misses, and build defensible takeoffs.',
   },
   {
@@ -64,7 +66,7 @@ export default function TheFrameworkPage() {
               operational execution with confidence.
             </p>
             <p className="mt-5 text-lg leading-8 text-[#d2dce4]">
-              MESLO stands for Material, Equipment, Subcontractors, Labor, and Other Costs.
+              MESLO stands for Materials, Equipment, Subcontractors, Labor, and Other Costs.
               The full estimating structure also includes Insurance/Bond, Overhead, Profit,
               and Taxes so the bid reflects both execution requirements and business reality.
             </p>
@@ -73,6 +75,12 @@ export default function TheFrameworkPage() {
               helps increase or decrease markups based on the situation, producing a
               definite price per linear foot, square foot, or cubic yard without compromise.
             </p>
+            <Link
+              href="/what-is-meslo"
+              className="mt-6 inline-flex font-semibold text-[#9fd8ff] underline underline-offset-4 hover:text-white"
+            >
+              Read the canonical definition of MESLO
+            </Link>
           </div>
 
           <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
