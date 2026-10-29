@@ -134,6 +134,17 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 ))}
               </div>
             </div>
+            <p className="mt-4 text-sm text-[#a9bfd1]">
+              The Principles of MESLO — a book by{' '}
+              <a
+                href="https://davidcmolina.com/"
+                className="transition hover:text-white"
+              >
+                @davidcmolina
+              </a>
+              , entrepreneur, Founder of Molinas Group, and Founder and former Executive Director of
+              Operation Code.
+            </p>
           </div>
         </footer>
       </body>
