@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import Link from 'next/link';
 import { useChat } from '@ai-sdk/react';
 import { DefaultChatTransport, type UIMessage } from 'ai';
 import ChatRichText from '@/components/ChatRichText';
@@ -196,12 +197,12 @@ export default function MesloAssistantPanel({ initialPrompt }: MesloAssistantPan
                           Copy Source: {RESOURCE_LABEL[resource]}
                         </button>
                       ))}
-                      <a
+                      <Link
                         href="/resources/starter-toolkit"
                         className="rounded-full border border-neutral-200 bg-neutral-100 px-3 py-1.5 text-xs font-semibold text-neutral-700 transition hover:bg-neutral-200"
                       >
                         Open Copy Source Toolkit
-                      </a>
+                      </Link>
                     </div>
                   ) : null}
                   {toolkitResources.length > 0 && copyStatus ? (

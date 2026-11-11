@@ -5,6 +5,14 @@ import Link from 'next/link';
 
 type NavItem = { href: string; label: string };
 
+const additionalMenuItems: NavItem[] = [
+  { href: '/meslo-for-contractors', label: 'MESLO for Contractors' },
+  { href: '/meslo-for-retail', label: 'MESLO for Retail' },
+  { href: '/meslo-for-accountants', label: 'MESLO for Accountants' },
+  { href: '/library', label: 'Library Card' },
+  { href: '/institutions', label: 'Institutional Adoption' },
+];
+
 function isExternalUrl(href: string) {
   return href.startsWith('http://') || href.startsWith('https://');
 }
@@ -63,6 +71,12 @@ export default function HeaderRightControls({
   const [menuOpen, setMenuOpen] = useState(false);
   const followRef = useRef<HTMLDivElement | null>(null);
   const menuRef = useRef<HTMLDivElement | null>(null);
+  const menuItems = [
+    ...(navItems ?? []).filter(
+      (item) => !additionalMenuItems.some((additional) => additional.href === item.href),
+    ),
+    ...additionalMenuItems,
+  ];
 
   const siteUrl = getSiteUrlFallback();
   const shareText = 'The Principles of MESLO';
@@ -191,8 +205,8 @@ export default function HeaderRightControls({
           ) : null}
         </div>
 
-        {navItems?.length ? (
-          <div ref={menuRef} className="relative md:hidden">
+        {menuItems.length ? (
+          <div ref={menuRef} className="relative">
             <button
               type="button"
               onClick={() => setMenuOpen((v) => !v)}
@@ -217,7 +231,7 @@ export default function HeaderRightControls({
                   Menu
                 </div>
                 <div className="border-t border-white/10">
-                  {navItems.map((item) =>
+                  {menuItems.map((item) =>
                     isExternalUrl(item.href) ? (
                       <a
                         key={`${item.label}-${item.href}`}

@@ -54,6 +54,12 @@ const footerLinks = [
   { href: '/fraud-warning', label: 'Fraud Warning' },
 ];
 
+const industryLinks = [
+  { href: '/meslo-for-contractors', label: 'MESLO for Contractors' },
+  { href: '/meslo-for-retail', label: 'MESLO for Retail' },
+  { href: '/meslo-for-accountants', label: 'MESLO for Accountants' },
+];
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   const shareText = shareTitle;
   const facebookShare = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(siteUrl)}&quote=${encodeURIComponent(shareQuote)}`;
@@ -124,18 +130,38 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
         <footer className="border-t border-white/10 bg-[#0a1824]">
           <div className="mx-auto max-w-7xl px-6 py-8 lg:px-8">
-            <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-              <p className="text-sm text-[#a9bfd1]">© 2026 David Molina - Principles of MESLO</p>
-              <div className="flex flex-wrap gap-5 text-sm text-[#a9bfd1]">
-                {footerLinks.map((item) => (
-                  <Link key={item.href} href={item.href} className="transition hover:text-white">
-                    {item.label}
-                  </Link>
-                ))}
-              </div>
+            <div className="grid gap-8 sm:grid-cols-2 sm:gap-12">
+              <nav aria-label="MESLO by industry">
+                <h2 className="text-sm font-semibold tracking-wide text-[#d7e6f2]">
+                  MESLO by Industry
+                </h2>
+                <ul className="mt-3 space-y-3 text-sm text-[#a9bfd1]">
+                  {industryLinks.map((item) => (
+                    <li key={item.href}>
+                      <Link href={item.href} className="transition hover:text-white">
+                        {item.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
+              <nav aria-label="Resources">
+                <h2 className="text-sm font-semibold tracking-wide text-[#d7e6f2]">
+                  Resources
+                </h2>
+                <ul className="mt-3 space-y-3 text-sm text-[#a9bfd1]">
+                  {footerLinks.map((item) => (
+                    <li key={item.href}>
+                      <Link href={item.href} className="transition hover:text-white">
+                        {item.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
             </div>
-            <p className="mt-4 text-sm text-[#a9bfd1]">
-              The Principles of MESLO — a book by{' '}
+            <p className="mt-8 border-t border-white/10 pt-6 text-sm leading-6 text-[#a9bfd1]">
+              © 2026 David Molina — The Principles of MESLO, a book by{' '}
               <a
                 href="https://davidcmolina.com/"
                 className="transition hover:text-white"

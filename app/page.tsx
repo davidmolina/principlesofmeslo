@@ -29,8 +29,8 @@ export default function MesloHomepagePrototype() {
               </div>
 
               <h1 className="max-w-4xl text-4xl font-semibold leading-[1.05] tracking-tight text-white md:text-5xl lg:text-[3.35rem] xl:text-[3.75rem]">
-                Construction estimating, operational clarity, and{' '}
-                <span className="text-[#b7d63d]">Principles of MESLO</span>.
+                Know your numbers. Price for profit.{' '}
+                <span className="text-[#b7d63d]">Build beyond yourself.</span>
               </h1>
 
               <p className="mt-5 max-w-2xl text-lg leading-7 text-[#d6e2ea] md:text-xl">
@@ -87,15 +87,38 @@ export default function MesloHomepagePrototype() {
 
         <section
           aria-labelledby="where-to-buy-heading"
-          className="border-b border-white/10 bg-[#0d1f2d] px-6 py-16 lg:py-20"
+          className="border-b border-white/10 bg-[#0d1f2d] px-6 pt-16 pb-8 lg:pt-20 lg:pb-10"
         >
           <div className="mx-auto max-w-6xl">
             <h2
               id="where-to-buy-heading"
               className="mb-8 text-center text-sm font-semibold uppercase tracking-widest text-[#b7d63d]"
             >
-              Where to Buy
+              Get the Book
             </h2>
+            <section className="signed-book" aria-labelledby="signed-book-title">
+              <div className="signed-book__content">
+                <div>
+                  <span className="signed-book__eyebrow">DIRECT FROM THE AUTHOR</span>
+                  <h2 id="signed-book-title">Want a signed copy?</h2>
+                  <p>
+                    Get a personally signed paperback of <em>The Principles of MESLO</em>, shipped
+                    to your door.
+                  </p>
+                </div>
+
+                <div className="signed-book__action">
+                  <strong>$40 shipped</strong>
+                  <Link
+                    href="/checkout"
+                    className="signed-book__button no-underline hover:no-underline focus:no-underline"
+                    aria-label="Order a signed paperback for $40 shipped"
+                  >
+                    Order Signed Copy <span aria-hidden="true">↗</span>
+                  </Link>
+                </div>
+              </div>
+            </section>
             <div className="flex flex-wrap justify-center gap-4">
               <a
                 href={amazonUrl}

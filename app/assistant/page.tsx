@@ -1,4 +1,5 @@
 import MesloAssistantPanel from '@/components/MesloAssistantPanel';
+import Link from 'next/link';
 
 type Props = {
   searchParams: Promise<{ q?: string }>;
@@ -43,9 +44,9 @@ export default async function AssistantPage({ searchParams }: Props) {
             </div>
             <p className="max-w-md text-sm text-[#9fb6c7] lg:text-right">
               Toolkit source:{' '}
-              <a href="/resources/starter-toolkit" className="text-[#9fd8ff] underline underline-offset-4">
+              <Link href="/resources/starter-toolkit" className="text-[#9fd8ff] underline underline-offset-4">
                 /resources/starter-toolkit
-              </a>
+              </Link>
             </p>
           </div>
         </section>

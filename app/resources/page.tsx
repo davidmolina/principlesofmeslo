@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export default function ResourcesPage() {
   return (
     <main className="mx-auto max-w-5xl px-6 py-16">
@@ -5,7 +7,7 @@ export default function ResourcesPage() {
       <p className="mt-3 text-neutral-300">Lead magnets and implementation tools for MESLO readers.</p>
 
       <div className="mt-10 grid gap-4 sm:grid-cols-2">
-        <a
+        <Link
           href="/resources/starter-toolkit"
           className="rounded-2xl border border-white/10 bg-white/5 p-5 transition hover:bg-white/10"
         >
@@ -17,9 +19,9 @@ export default function ResourcesPage() {
           <div className="mt-4 text-xs font-semibold uppercase tracking-[0.18em] text-amber-300">
             Open toolkit source
           </div>
-        </a>
+        </Link>
 
-        <a
+        <Link
           href="/resources/markup-vs-margin-calculator"
           className="rounded-2xl border border-white/10 bg-white/5 p-5 transition hover:bg-white/10"
         >
@@ -30,9 +32,9 @@ export default function ResourcesPage() {
           <div className="mt-4 text-xs font-semibold uppercase tracking-[0.18em] text-amber-300">
             Open calculator
           </div>
-        </a>
+        </Link>
 
-        <a
+        <Link
           href="/resources/community-support"
           className="rounded-2xl border border-white/10 bg-white/5 p-5 transition hover:bg-white/10"
         >
@@ -44,7 +46,7 @@ export default function ResourcesPage() {
           <div className="mt-4 text-xs font-semibold uppercase tracking-[0.18em] text-amber-300">
             Browse resources
           </div>
-        </a>
+        </Link>
       </div>
     </main>
   );
